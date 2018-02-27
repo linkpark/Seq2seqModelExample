@@ -90,7 +90,7 @@ class Seq2SeqModel:
                     attention_layer_size=self.decoder_hidden_unit)
 
                 decoder_initial_state = (
-                     decoder_attetion_cell.zero_state(tf.size(self.decoder_full_length),
+                     decoder_cell.zero_state(tf.size(self.decoder_full_length),
                                                       dtype=tf.float32).clone(
                                                         cell_state=encoder_state))
             else:
